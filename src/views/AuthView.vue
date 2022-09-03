@@ -1,11 +1,13 @@
 <template>
   <h1>Esta es la vista de SignUp/In</h1>
-  <button @click="handleSignUp">SignUp</button>
+  <SignInForm />
+  <!-- <button @click="handleSignUp">SignUp</button> -->
 </template>
 
-<script>
+<!-- <script>
 import { mapState, mapActions } from 'pinia';
 import userStore from '@/store/user';
+import SignInForm from '@/Components/SignInForm.vue';
 
 export default {
   name: 'AuthView',
@@ -17,7 +19,7 @@ export default {
     handleSignUp() {
       const userData = {
         email: 'example@example.com',
-        password: '1234',
+        password: '123456',
       };
       this.signUp(userData.email, userData.password);
     },
@@ -30,5 +32,6 @@ export default {
       }
     },
   },
+  components: { SignInForm },
 };
-</script>
+</script> -->
