@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
 
      <form action="action_page.php" style="border:1px solid #ccc">
   <div class="Form">
@@ -32,7 +32,7 @@
 
 <script>
 import { mapState, mapActions } from 'pinia';
-import userStore from '@/store/user';
+;
 
 export default {
 name: 'AuthView',
@@ -59,4 +59,4 @@ name: 'AuthView',
     },
     components: { SignInForm },
 };
-    </script>
+    </script> -->
