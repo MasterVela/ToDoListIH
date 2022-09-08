@@ -1,20 +1,37 @@
 <!-- eslint-disable max-len -->
 <template>
   <h1>Sign Up // Sign In</h1>
-  <h3>Si no tienes una cuenta, entra tu mail y tu contraseña y recibirás un mail de confirmación.</h3>
+  <h3>
+    Si no tienes una cuenta, entra tu mail y tu contraseña y recibirás un mail
+    de confirmación.
+  </h3>
   <form>
     <label for="email">
-        <b>Email</b> <br>
-        <input v-model="EmailValue" type="text" placeholder="Enter Email" name="email" required>
-        </label> <br>
- <br>
-        <label for="password">
-        <b>Password</b> <br>
-        <input v-model="PasswordValue" type="password" placeholder="Enter Password" name="password" required>
-        </label> <br><br>
-        <button type="submit" @click="handleSignUp">SignUp</button>
-        <span id="emailID" ref="1" style="display:none">{{ EmailValue }}</span>
-        <span id="passwordID" ref="2" style="display:none">{{ PasswordValue }}</span>
+      <b>Email</b> <br />
+      <input
+        v-model="emailValue"
+        type="email"
+        placeholder="Enter Email"
+        name="email"
+        required
+      />
+    </label>
+    <br />
+    <br />
+    <label for="password">
+      <b>Password</b> <br />
+      <input
+        v-model="passwordValue"
+        type="password"
+        placeholder="Enter Password"
+        name="password"
+        required
+      />
+    </label>
+    <br /><br />
+    <button @click.prevent="handleSignUp">SignUp</button>
+    <span id="emailID" ref="1" style="display: block">{{ emailValue }}</span>
+    <span id="passwordID" ref="2" style="display: block">{{ passwordValue }}</span>
   </form>
 </template>
 
@@ -25,8 +42,8 @@ import userStore from '@/store/user';
 export default {
   data() {
     return {
-      EmailValue: '',
-      PasswordValue: '',
+      emailValue: '',
+      passwordValue: '',
       message: '',
     };
   },
@@ -38,10 +55,10 @@ export default {
     ...mapActions(userStore, ['signUp']),
     handleSignUp() {
       const userData = {
-        email: 'this.$refs.myDiv',
-        password: '{{ PaswordValue }}',
+        emailData: this.emailValue,
+        passwordData: this.passwordValue,
       };
-      this.signUp(userData.email, userData.password);
+      this.signUp(userData.emailData, userData.passwordData);
     },
   },
   watch: {
