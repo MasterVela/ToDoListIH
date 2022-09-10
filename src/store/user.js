@@ -19,10 +19,7 @@ export default defineStore('userStore', {
       if (error) throw error;
       if (user) this.user = user;
     },
-    // sign out supabase buscar google.
-    // if user = null
   },
-
   persist: {
     enabled: true,
     strategies: [
