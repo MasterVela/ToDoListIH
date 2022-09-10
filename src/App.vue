@@ -1,14 +1,13 @@
 <template>
-  <nav v-if="user !== null">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/auth">Sign out</router-link> |
-  </nav>
   <router-view/>
+   <nav v-if="user !== null" class="navBar">
+   <router-link to="/"><p id="navtext">Home</p></router-link>
+   </nav>
 </template>
 
-<script>
+<script >
+import userStore from '@/store/user';
 import { mapState, mapActions } from 'pinia';
-import userStore from './store/user';
 
 export default {
   name: 'App',
@@ -16,7 +15,10 @@ export default {
     ...mapState(userStore, ['user']),
   },
   methods: {
-    ...mapActions(userStore, ['fetchUser']),
+    ...mapActions(userStore, ['fetchUser'], ['signOut']),
+    handleSignOut() {
+      this.signOut();
+    },
   },
   async created() {
     try {
@@ -28,31 +30,23 @@ export default {
         this.$router.push({ path: '/' });
       }
     } catch (e) {
-      console.error(e);
+      console.log(e);
     }
   },
 };
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+  nav {
+    background-color: green;
+    width: 50%;
 
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
+  }
+  #navtext {
+    color: white
+  }
+  * {
+    padding: 0;
+    margin: 0;
+  }
 </style>
