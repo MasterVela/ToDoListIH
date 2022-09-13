@@ -1,10 +1,9 @@
 <template>
   <div class="home">
-  <h1>esto es la home</h1>
-  <taskJobs></taskJobs>
-  <button @click="handleSignOut">Sign Out </button>
-  <!-- m'he d'emportar això a l'app ' o crear un component de nav bar -->
-
+    <h1>esto es la home</h1>
+    <taskJobs></taskJobs>
+    <button @click="handleSignOut">Sign Out</button>
+    <!-- m'he d'emportar això a l'app ' o crear un component de nav bar -->
   </div>
 </template>
 
@@ -14,7 +13,7 @@ import userStore from '@/store/user';
 
 export default {
   name: 'HomeView',
-  components: { },
+  components: {},
   computed: {
     ...mapState(userStore, ['user']),
   },

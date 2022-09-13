@@ -1,8 +1,8 @@
 <template>
-  <router-view/>
-   <nav v-if="user !== null" class="navBar">
-   <router-link to="/"><p id="navtext">Home</p></router-link>
-   </nav>
+  <router-view />
+  <nav v-if="user !== null" class="navBar">
+    <router-link to="/"><p id="navtext">Home</p></router-link>
+  </nav>
 </template>
 
 <script >
@@ -37,16 +37,15 @@ export default {
 </script>
 
 <style>
-  nav {
-    background-color: green;
-    width: 50%;
-
-  }
-  #navtext {
-    color: white
-  }
-  * {
-    padding: 0;
-    margin: 0;
-  }
+nav {
+  background-color: green;
+  width: 50%;
+}
+#navtext {
+  color: white;
+}
+* {
+  padding: 0;
+  margin: 0;
+}
 </style>
