@@ -7,7 +7,7 @@
 
   <!-- Registro -->
   <form v-show="registerChecker == true" @submit.prevent="handleSignUp">
-    <h2 class="form">¿Tu primera vez?<br> ¡Creemos un usuario!</h2> <br>
+    <h2 class="formText">¿Tu primera vez?<br> ¡Creemos un usuario!</h2> <br>
     <div class="form">
       <label for="email">
         Email: <br>
@@ -23,7 +23,7 @@
 
   <!-- Log In -->
   <form v-show="loginChecker == true" @submit.prevent="handleSignIn">
-    <h2 class="form">¿Vuelves por aquí? <br> ¡Perfecto!</h2> <br>
+    <h2 class="formText">¿Vuelves por aquí? <br> ¡Perfecto!</h2> <br>
     <div class="form">
         <label for="email">
           Email: <br>
@@ -135,10 +135,16 @@ export default {
   border: 0px;
   border-radius: 6px;
   margin: 5px;
+  color:#333333
+}
+
+.formText {
+  animation: fadeIn 2s;
+  opacity: 1;
 }
 
 .form {
-  animation: fadeIn 2s;
+  animation: fadeIn 4s;
   opacity: 1;
 }
 
