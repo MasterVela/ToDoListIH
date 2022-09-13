@@ -7,7 +7,7 @@
 
   <!-- Registro -->
   <form v-show="registerChecker == true" @submit.prevent="handleSignUp">
-    <h2>Register Form</h2> <br>
+    <h2>¿Tu primera vez?<br> ¡Creemos un usuario!</h2> <br>
     <div class="form">
       <label for="email">
         Email: <br>
@@ -23,7 +23,7 @@
 
   <!-- Log In -->
   <form v-show="loginChecker == true" @submit.prevent="handleSignIn">
-    <h2>Login Form</h2> <br>
+    <h2>¿Vuelves por aquí? <br> ¡Perfecto!</h2> <br>
     <div class="form">
         <label for="email">
           Email: <br>
