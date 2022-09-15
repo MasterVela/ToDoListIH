@@ -1,7 +1,8 @@
+<!-- eslint-disable vuejs-accessibility/form-control-has-label -->
 <template>
   <div class="home">
     <h1>esto es la home</h1>
-    <taskJobs></taskJobs>
+    <!-- aqui posar les coses -->
     <button @click="handleSignOut">Sign Out</button>
     <!-- m'he d'emportar això a l'app ' o crear un component de nav bar -->
   </div>
@@ -13,7 +14,10 @@ import userStore from '@/store/user';
 
 export default {
   name: 'HomeView',
-  components: {},
+  data() {
+  },
+  components: {
+  },
   computed: {
     ...mapState(userStore, ['user']),
   },

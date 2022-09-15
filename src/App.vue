@@ -11,6 +11,8 @@ import { mapState, mapActions } from 'pinia';
 
 export default {
   name: 'App',
+  components: {
+  },
   computed: {
     ...mapState(userStore, ['user']),
   },
