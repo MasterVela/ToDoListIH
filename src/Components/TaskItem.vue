@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/no-mutating-props -->
 <!-- eslint-disable max-len -->
 <template>
   <div
@@ -15,22 +16,22 @@
 
       <tbody>
         <tr>
-          <td>
-            <!-- <input
-              aria-label="task"
+          <td> <label for="text">
+            <input
               type="text"
               v-model="task.title"
               class="rounded p-2 pl-4 pr-10 focus:outline-none"
-            /> -->
+            />
+          </label>
           </td>
           <!--icons delete-->
           <td>
-            <div class="float-right" @click="deleteTask(task)" @keypress="bar">
+            <div class="float-right" @click="deleteTask(task)" @keypress="del">
               <span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="h-6 w-6"
-                  fill="none"
+                  fill="block"
                   viewBox="0 0 24 24"
                   stroke="white"
                   stroke-width="2"
@@ -46,12 +47,12 @@
           </td>
           <!--icons edit-->
           <td>
-            <div class="float-right" @click="editTask(task)" @keypress="bar">
+            <div class="float-right" @click="editTask(task)" @keypress="e">
               <span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="h-6 w-6"
-                  fill="none"
+                  fill="block"
                   viewBox="0 0 24 24"
                   stroke="white"
                   stroke-width="2"
@@ -67,12 +68,12 @@
           </td>
           <!--icons delete-->
           <td>
-            <div class="float-right" @click="completeTask(task)" @keypress="bar">
+            <div class="float-right" @click="completeTask(task)" @keypress="enter">
               <span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="h-6 w-6"
-                  fill="none"
+                  fill="block"
                   viewBox="0 0 24 24"
                   stroke="white"
                   stroke-width="2"
@@ -94,15 +95,14 @@
 </template>
 
 <script>
-import { supabase } from '@/supabase';
+import { supabase } from '../supabase';
 
 export default {
   props: {
     task: String,
   },
   data() {
-    return {
-    };
+    return {};
   },
   methods: {
     async deleteTask(task) {
@@ -137,7 +137,7 @@ export default {
     },
   },
   mounted() {
-    console.log(this.task);
+    // console.log(this.task);
   },
 };
 </script>
