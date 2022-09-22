@@ -1,7 +1,7 @@
 <template>
   <router-view />
   <nav v-if="user !== null" class="navBar">
-    <router-link to="/"><p id="navtext">Home</p></router-link>
+    <router-link to="/"><p id="navtext"></p></router-link>
   </nav>
 </template>
 

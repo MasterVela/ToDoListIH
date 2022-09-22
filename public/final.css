@@ -698,16 +698,100 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.shadow-lg {
+/* .shadow-lg {
   --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
     0 4px 6px -4px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color),
     0 4px 6px -4px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
     var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
+} */
 
 .focus\:outline-none:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
+}
+
+.h1-home {
+  font-size: 50px;
+  justify-content: center;
+  display: flex;
+}
+
+* {
+  background-color: rgb(162, 162, 241);
+  color: white;
+}
+
+.manage-button {
+  padding: 5px;
+  margin: 5px;
+}
+
+.add-button {
+  border: 3px solid #333333;
+  border-radius: 6px;
+  padding: 10px;
+  margin: 5px;
+  color: white;
+}
+
+input::placeholder{
+  color: lightgrey;
+}
+
+.main-task{
+  justify-content: center;
+  display: flex;
+  padding: 10px;
+  border-bottom: 1px solid lightgrey;
+  width: 50%;
+  animation: fadeIn 2s;
+  opacity: 1;
+}
+
+.center-items{
+	display: grid;
+  place-items: center;
+}
+
+.task-text{
+  font-size: 20px;
+}
+
+.signout {
+  font-family: 'roboto';
+  padding: 10px;
+  width: 100px;
+  border: 0px;
+  background-color: white;
+  border-radius: 6px;
+  text-transform: capitalize;
+  color: #333333;
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 999;
+}
+
+.desmarcar {
+  position:absolute;
+  right: 25%;
+  margin-top: -24px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.logo {
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+
 }

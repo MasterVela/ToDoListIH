@@ -2,7 +2,7 @@
 <!-- eslint-disable max-len -->
 <template>
   <div
-    class="bg-gradient-to-t from-digitalLavander to-galacticCobalt rounded-md shadow-lg w-96 mt-4 mx-auto p-4 flex justify-center"
+    class="main-task"
   >
     <table class="rounded-lg">
       <thead>
@@ -20,20 +20,20 @@
             <input
               type="text"
               v-model="task.title"
-              class="rounded p-2 pl-4 pr-10 focus:outline-none"
+              class="task-text"
             />
           </label>
           </td>
           <!--icons delete-->
           <td>
-            <div class="float-right" @click="deleteTask(task)" @keypress="del">
+            <div class="float-right, manage-button" @click="deleteTask(task)" @keypress="del">
               <span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="h-6 w-6"
                   fill="block"
                   viewBox="0 0 24 24"
-                  stroke="white"
+                  stroke="rgb(162, 162, 241)"
                   stroke-width="2"
                 >
                   <path
@@ -47,14 +47,14 @@
           </td>
           <!--icons edit-->
           <td>
-            <div class="float-right" @click="editTask(task)" @keypress="e">
+            <div class="float-right, manage-button" @click="editTask(task)" @keypress="e">
               <span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="h-6 w-6"
+                  class="h-6 w-6, icon"
                   fill="block"
                   viewBox="0 0 24 24"
-                  stroke="white"
+                  stroke="rgb(162, 162, 241)"
                   stroke-width="2"
                 >
                   <path
@@ -68,14 +68,14 @@
           </td>
           <!--icons delete-->
           <td>
-            <div class="float-right" @click="completeTask(task)" @keypress="enter">
+            <div class="float-right, manage-button" @click="completeTask(task)" @keypress="enter">
               <span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="h-6 w-6"
                   fill="block"
                   viewBox="0 0 24 24"
-                  stroke="white"
+                  stroke="rgb(162, 162, 241)"
                   stroke-width="2"
                 >
                   <path
@@ -85,7 +85,9 @@
                   />
                 </svg>
               </span>
-              {{ task.is_complete ? "Desmarcar" : "" }}
+              <div class="desmarcar">
+                {{ task.is_complete ? "Completado" : "" }}
+              </div>
             </div>
           </td>
         </tr>

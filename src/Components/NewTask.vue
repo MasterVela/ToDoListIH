@@ -3,19 +3,19 @@
 <!-- eslint-disable max-len -->
 <template>
   <div
-    class="bg-gradient-to-t from-digitalLavander to-galacticCobalt rounded-md shadow-lg w-96 mt-20 mx-auto p-10 flex flex-row justify-center"
+    class="main-task"
   >
     <!--INPUT-->
-    <form @click="submit" class="">
+    <form @click="submit">
       <input
         aria-label="task"
         type="text"
-        placeholder="Add a new task"
-        class="rounded p-2 pl-4 pr-10 focus:outline-none"
+        placeholder="Añade una tarea..."
+        class="add-button"
         v-model="task"
       />
-      <button
-        type="submit"> Add </button>
+      <button class="add-button"
+        type="submit"> Añadir </button>
     </form>
   </div>
 </template>
