@@ -1,19 +1,22 @@
 <!-- eslint-disable vuejs-accessibility/form-control-has-label -->
 <template>
-
   <section>
     <div class="h1-home">
       <h1>Task manager</h1>
     </div>
-    <button class='signout' @click="handleSignOut">Sign Out</button>
-      <div class="center-items">
+    <button class="signout" @click="handleSignOut">Sign Out</button>
+    <div class="center-items">
       <NewTask @getAll="getAllTasks" />
       <!-- <h1 class="bg-purple-200 text-center py-10"></h1> -->
-      <TaskItem @getAll="getAllTasks" v-for="task in tasks" :key="task.id" :task="task" />
+      <TaskItem
+        @getAll="getAllTasks"
+        v-for="task in tasks"
+        :key="task.id"
+        :task="task"
+      />
     </div>
     <router-view></router-view>
   </section>
-
 </template>
 
 <script>
