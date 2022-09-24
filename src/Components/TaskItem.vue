@@ -1,9 +1,7 @@
 <!-- eslint-disable vue/no-mutating-props -->
 <!-- eslint-disable max-len -->
 <template>
-  <div
-    class="main-task"
-  >
+  <div class="main-task">
     <table class="rounded-lg">
       <thead>
         <tr>
@@ -16,17 +14,18 @@
 
       <tbody>
         <tr>
-          <td> <label for="text">
-            <input
-              type="text"
-              v-model="task.title"
-              class="task-text"
-            />
-          </label>
+          <td>
+            <label for="text">
+              <input type="text" v-model="task.title" class="task-text" />
+            </label>
           </td>
           <!--icons delete-->
           <td>
-            <div class="float-right, manage-button" @click="deleteTask(task)" @keypress="del">
+            <div
+              class="float-right, manage-button"
+              @click="deleteTask(task)"
+              @keypress="del"
+            >
               <span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -47,7 +46,11 @@
           </td>
           <!--icons edit-->
           <td>
-            <div class="float-right, manage-button" @click="editTask(task)" @keypress="e">
+            <div
+              class="float-right, manage-button"
+              @click="editTask(task)"
+              @keypress="e"
+            >
               <span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -68,7 +71,11 @@
           </td>
           <!--icons delete-->
           <td>
-            <div class="float-right, manage-button" @click="completeTask(task)" @keypress="enter">
+            <div
+              class="float-right, manage-button"
+              @click="completeTask(task)"
+              @keypress="enter"
+            >
               <span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
