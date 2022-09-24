@@ -1,21 +1,18 @@
 <!-- eslint-disable vuejs-accessibility/click-events-have-key-events -->
-
 <!-- eslint-disable max-len -->
 <template>
-  <div
-    class="main-task"
-  >
-    <!--INPUT-->
-    <form @click="submit">
+  <div class="main-task">
+    <form>
       <input
+        class="add-button"
         aria-label="task"
         type="text"
         placeholder="Añade una tarea..."
-        class="add-button"
         v-model="task"
       />
-      <button class="add-button"
-        type="submit"> Añadir </button>
+      <button class="add-button" type="submit" @click.prevent="submit">
+        Añadir
+      </button>
     </form>
   </div>
 </template>
