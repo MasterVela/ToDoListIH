@@ -1,51 +1,105 @@
 <!-- eslint-disable max-len -->
 <template>
-  <div class='form-space'>
+  <div class="form-space">
+    <h1 class="title">
+      Antes de nada... <br />
+      ¿Quién eres?
+    </h1>
 
-  <h1 class='title'>
-    Antes de nada... <br> ¿Quién eres?</h1>
-
-  <!-- Registro -->
-  <form v-show="registerChecker == true" @submit.prevent="handleSignUp">
-    <h2 class="formText">¿Tu primera vez?<br> ¡Creemos un usuario!</h2> <br>
-    <div class="form">
-      <label for="email">
-        Email: <br>
-        <input name="email" v-model="email" placeholder="email..." class='imput-form'/> <br> <br>
-      </label>
-      <label for="password">
-        Password: <br>
-        <input name="password" v-model="password" placeholder="password..." type="password" class='imput-form'/>
-      </label> <br> <br>
-    <input type="submit" class='form-button' value="Registro" />
-    </div>
-  </form>
-
-  <!-- Log In -->
-  <form v-show="loginChecker == true" @submit.prevent="handleSignIn">
-    <h2 class="formText">¿Vuelves por aquí? <br> ¡Perfecto!</h2> <br>
-    <div class="form">
+    <!-- Registro -->
+    <form v-show="registerChecker == true" @submit.prevent="handleSignUp">
+      <h2 class="formText">
+        ¿Tu primera vez?<br />
+        ¡Creemos un usuario!
+      </h2>
+      <br />
+      <div class="form">
         <label for="email">
-          Email: <br>
-          <input name="email" v-model="email" placeholder="email..." class='imput-form'/> <br> <br>
+          Email: <br />
+          <input
+            name="email"
+            v-model="email"
+            placeholder="email..."
+            class="imput-form"
+          />
+          <br />
+          <br />
         </label>
         <label for="password">
-          Password: <br>
-          <input name="password" v-model="password" placeholder="password..." type="password" class='imput-form'/>
-        </label> <br> <br>
-      <input type="submit" class='form-button' value="Login" />
+          Password: <br />
+          <input
+            name="password"
+            v-model="password"
+            placeholder="password..."
+            type="password"
+            class="imput-form"
+          />
+        </label>
+        <br />
+        <br />
+        <input type="submit" class="form-button" value="Registro" />
+      </div>
+    </form>
+
+    <!-- Log In -->
+    <form v-show="loginChecker == true" @submit.prevent="handleSignIn">
+      <h2 class="formText">
+        ¿Vuelves por aquí? <br />
+        ¡Perfecto!
+      </h2>
+      <br />
+      <div class="form">
+        <label for="email">
+          Email: <br />
+          <input
+            name="email"
+            v-model="email"
+            placeholder="email..."
+            class="imput-form"
+          />
+          <br />
+          <br />
+        </label>
+        <label for="password">
+          Password: <br />
+          <input
+            name="password"
+            v-model="password"
+            placeholder="password..."
+            type="password"
+            class="imput-form"
+          />
+        </label>
+        <br />
+        <br />
+        <input type="submit" class="form-button" value="Login" />
+      </div>
+    </form>
+
+    <div class="main-button-container">
+      <button
+        @click.prevent="
+          (registerChecker = false), (loginChecker = !loginChecker)
+        "
+        v-show="loginChecker == false"
+        class="button"
+        id="button-left"
+      >
+        Login
+      </button>
+
+      <button
+        @click.prevent="
+          (registerChecker = !registerChecker), (loginChecker = false)
+        "
+        v-show="registerChecker == false"
+        class="button"
+        id="button-right"
+      >
+        Registro
+      </button>
     </div>
-  </form>
-
-  <div class="main-button-container">
-  <button @click.prevent="(registerChecker = false), (loginChecker = !loginChecker)"
-    v-show="loginChecker == false" class="button" id="button-left"> Login </button>
-
-  <button @click.prevent="(registerChecker = !registerChecker), (loginChecker = false)"
-    v-show="registerChecker == false" class="button" id="button-right"> Registro </button>
   </div>
-
-</div>
 </template>
 
 <script>
@@ -90,7 +144,6 @@ export default {
 </script>
 
 <style scoped>
-
 .title {
   font-size: 60px;
   color: white;
@@ -102,16 +155,16 @@ export default {
   background-color: rgb(162, 162, 241);
   color: white;
 }
-.form-space{
-  font-family: 'roboto';
+.form-space {
+  font-family: "roboto";
   display: grid;
   place-items: center;
   height: 100vh;
-  width:  100vw;
+  width: 100vw;
 }
 
 .button {
-  font-family: 'roboto';
+  font-family: "roboto";
   padding: 10px;
   width: 100px;
   border: 0px;
@@ -126,7 +179,7 @@ export default {
   color: #333333;
   border: 2px solid #333333;
   border-radius: 6px;
-  margin-left: 5px
+  margin-left: 5px;
 }
 
 .imput-form {
@@ -135,7 +188,7 @@ export default {
   border: 0px;
   border-radius: 6px;
   margin: 5px;
-  color:#333333
+  color: #333333;
 }
 
 .formText {
@@ -148,7 +201,7 @@ export default {
   opacity: 1;
 }
 
-.main-button-container{
+.main-button-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr;
@@ -174,5 +227,4 @@ export default {
     opacity: 1;
   }
 }
-
 </style>
