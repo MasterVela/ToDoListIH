@@ -1,4 +1,6 @@
 # to-do-list-ih
+Netlify link:
+https://dazzling-genie-cddcc6.netlify.app
 
 ## Project setup
 ```
