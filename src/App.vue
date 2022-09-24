@@ -11,8 +11,7 @@ import { mapState, mapActions } from 'pinia';
 
 export default {
   name: 'App',
-  components: {
-  },
+  components: {},
   computed: {
     ...mapState(userStore, ['user']),
   },
@@ -39,13 +38,6 @@ export default {
 </script>
 
 <style>
-nav {
-  background-color: green;
-  width: 50%;
-}
-#navtext {
-  color: white;
-}
 * {
   padding: 0;
   margin: 0;
